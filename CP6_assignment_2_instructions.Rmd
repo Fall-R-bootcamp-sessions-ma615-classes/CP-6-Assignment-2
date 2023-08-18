@@ -1,0 +1,31 @@
+---
+title: "CP6_Assignment_2_instructions"
+author: "Aidan O'Hara"
+date: "2023-08-18"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Buoy Stuff!
+
+## Exercise 1
+Run the attached `BuoyRetriever.R` file, it should produce a .csv file in your working directory containing the buoy data Haviland has demonstrated in lecture. 
+Make a histogram of the observed atmospheric temperatures. Use the histogram() function.
+Save your plot to the variable assignment `x`.
+
+## Exercise 2
+You may have already noticed, but some of the columns in the buoy data seem to only have 9's/99's/or 999's. Lets check that those rows only have 9's by running them through the `unique()` function.  `unique(buoy$ATMP)` for example.  Remove any rows you find that do not contain any data and only return a single value when unique is called.
+Use the `subset()` function to remove rows and save the new dataframe as `betterBuoy`
+
+## Exercise 3
+Lets explore the `WSPD` column to find out the maximum wind speed recorded by our buoy.
+Running `max(buoy$WSPD)` we'll see that the max wind speed was `99`.  However, like before, 99 is our placeholder for data we don't actually have. Those values should be NA instead of 99.  
+Remember the lecture code and transmute the `99` values in our `WSPD` column into `NA`s.
+Hopefully, having removed those values running `max(buoy$WSPD)` should return a sensible wind speed. Save that value into a variable called `maxWindSpeed`.
+
+## Exercise 4
+For your last exercise, and this could wait for the weekend too, install the package `GrapheR`, use `install.packages("GrapheR)`, and then `library(GrapheR)`.  
+This package allows you to develop base R plots in a rustic GUI (Graphical User Interface).  After reading in your data sets to the local environment, you can run `run.GrapheR()` and RStudio will open a new window, usually behind everything else.  Use `??GrapheR` to open the documentation and learn how to use the GUI.  Explore making different plots using any of the data we used today.  Make sure to add titles, legends, and axis labels.  Save your plots using the save button within the GUI and GrapheR will write a .R file that constructs the plot you designed.  Set aside your favorites to share with class on Monday!

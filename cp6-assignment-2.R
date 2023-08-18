@@ -6,24 +6,20 @@
 
 buoy <- read.csv("freshBuoyData.csv")
 
-x <- hist(buoy$ATMP)
+# x <- 
 
 # Exercise 2
 
 # Remove using subset
-buoy <- subset(buoy, select = -c(MWD, DEWP, VIS))
-
+#betterBuoy <- subset()
 
 # Exercise 3
 
-buoy$WSPD[buoy$WSPD==99]<-NA
+# Your code for fixing the 99s:
 
-buoy <- subset(buoy, subset = !is.na(WSPD))
-
-max(buoy$WSPD)
+#maxWindSpeed <-
 
 # Exercise 4
 #install.packages("GrapheR")
 #library(GrapheR)
 
-# make a better plot
